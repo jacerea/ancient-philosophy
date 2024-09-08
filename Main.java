@@ -21,52 +21,61 @@ public class Main{
         //We need to figure out how to print the ASCIIs
         if(choice == "aristole"){
             try{
-                Scanner reader = new Scanner(new File("philosophers.aristotle.arihistory"));
+                Scanner reader = new Scanner(new File("./philosophers/aristotle/arihistory"));
                 while(scanner.hasNextLine()){
                     historyArrayList.add(reader.nextLine());
                 }
-                reader = new Scanner(new File("philosophers.aristotle.ariquotes"));
+                reader.close();
+                reader = new Scanner(new File("./philosophers/aristotle/ariquotes"));
                 while(scanner.hasNextLine()){
                     quotesArrayList.add(reader.nextLine());
                 }
-                reader = new Scanner(new File("philosophers.aristotle.arireactions"));
+                reader.close();
+                reader = new Scanner(new File("./philosophers/aristotle/arireactions"));
                 while(scanner.hasNextLine()){
                     reactionsArrayList.add(reader.nextLine());
                 }
+                reader.close();
             }catch(FileNotFoundException exception){
                 exception.printStackTrace();
             }
         }else if(choice == "seneca"){ 
             try{
-                Scanner reader = new Scanner(new File("philosophers.seneca.senhistory"));
+                Scanner reader = new Scanner(new File("./philosophers/seneca/senhistory"));
                 while(scanner.hasNextLine()){
                     historyArrayList.add(reader.nextLine());
                 }
-                reader = new Scanner(new File("philosophers.seneca.senquotes"));
+                reader.close();
+                reader = new Scanner(new File("./philosophers/seneca/senquotes"));
                 while(scanner.hasNextLine()){
                     quotesArrayList.add(reader.nextLine());
                 }
-                reader = new Scanner(new File("philosophers.seneca.senreactions"));
+                reader.close();
+                reader = new Scanner(new File("./philosophers/seneca/senreactions"));
                 while(scanner.hasNextLine()){
                     reactionsArrayList.add(reader.nextLine());
                 }
+                reader.close();
             }catch(FileNotFoundException exception){
                 exception.printStackTrace();
             }
         }else if(choice == "bloom"){
             try{
-                Scanner reader = new Scanner(new File("philosophers.bloom.bloomhistory"));
+                Scanner reader = new Scanner(new File("./philosophers/bloom/bloomhistory"));
                 while(scanner.hasNextLine()){
                     historyArrayList.add(reader.nextLine());
                 }
-                reader = new Scanner(new File("philosophers.bloom.bloomquotes"));
+                reader.close();
+                reader = new Scanner(new File("./philosophers/bloom/bloomquotes"));
                 while(scanner.hasNextLine()){
                     quotesArrayList.add(reader.nextLine());
                 }
-                reader = new Scanner(new File("philosophers.bloom.bloomreactions"));
+                reader.close();
+                reader = new Scanner(new File("./philosophers/bloom/bloomreactions"));
                 while(scanner.hasNextLine()){
                     reactionsArrayList.add(reader.nextLine());
                 }
+                reader.close();
             }catch(FileNotFoundException exception){
                 exception.printStackTrace();
             }
