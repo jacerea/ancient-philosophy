@@ -22,3 +22,13 @@ https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Aristotle_Altemps_Inv8
 
 Aristotle Info:
 https://en.wikipedia.org/wiki/Aristotle
+
+Bloom Quotes:
+https://www.azquotes.com/author/31395-Benjamin_Bloom
+https://www.goodreads.com/quotes/10770774-a-student-attains-higher-order-thinking-when-he-no-longer
+
+Bloom Image:
+https://pi.lib.uchicago.edu/1001/dig/photoarchive/apf1-09293/r
+
+Bloom Info:
+https://en.wikipedia.org/wiki/Benjamin_Bloom
