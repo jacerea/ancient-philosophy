@@ -10,7 +10,7 @@ public class Main{
     public static void main(String[] args){
         Scanner scanner = new Scanner(System.in);
         //Check for error coding
-        System.out.println("What Philosopher/Psycologist would you like to learn about? (Aristole, Seneca, Bloom)");
+        System.out.println("What Philosopher/Psycologist would you like to learn about? (Aristotle, Seneca, Bloom)");
         String choice = scanner.nextLine().toLowerCase();
         List<String> historyArrayList = new ArrayList<>(5);
         List<String> quotesArrayList = new ArrayList<>(10);
@@ -19,11 +19,12 @@ public class Main{
         //reader.close()
         //Adds all the data from the txt files into their respective arraylists.
         //We need to figure out how to print the ASCIIs
-        if(choice == "aristole"){
+        System.out.println(choice);
+        if(choice.equals("Aristotle")) {
             try{
-                Scanner reader = new Scanner(new File("./philosophers/aristotle/arihistory.txt"));
-                while(scanner.hasNextLine()){
-                    //historyArrayList.add(reader.nextLine());
+                Scanner reader = new Scanner(new File("philosophers\\aristotle\\arihistory.txt"));
+                while(reader.hasNextLine()){
+                    // historyArrayList.add(reader.nextLine());
                     System.out.println(reader.nextLine());
                 }
                 reader.close();
@@ -40,7 +41,7 @@ public class Main{
             }catch(FileNotFoundException exception){
                 exception.printStackTrace();
             }
-        }else if(choice == "seneca"){ 
+        }else if(choice.equals("seneca")){ 
             try{
                 Scanner reader = new Scanner(new File("./philosophers/seneca/senhistory"));
                 while(scanner.hasNextLine()){
@@ -60,7 +61,7 @@ public class Main{
             }catch(FileNotFoundException exception){
                 exception.printStackTrace();
             }
-        }else if(choice == "bloom"){
+        }else if(choice.equals("bloom")){
             try{
                 Scanner reader = new Scanner(new File("./philosophers/bloom/bloomhistory"));
                 while(scanner.hasNextLine()){
@@ -83,7 +84,7 @@ public class Main{
         }
         //if they choose noone
         else{
-
+            System.out.print("not a choice");
         }
         //prints the full history of said philosopher from the arraylist
         for(int i = 0; i < historyArrayList.size(); i++){
