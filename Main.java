@@ -12,9 +12,9 @@ public class Main{
         //Check for error coding
         System.out.println("What Philosopher/Psycologist would you like to learn about? (Aristole, Seneca, Bloom)");
         String choice = scanner.nextLine().toLowerCase();
-        List<String> historyArrayList = new ArrayList<>();
-        List<String> quotesArrayList = new ArrayList<>();
-        List<String> reactionsArrayList = new ArrayList<>();
+        List<String> historyArrayList = new ArrayList<>(5);
+        List<String> quotesArrayList = new ArrayList<>(10);
+        List<String> reactionsArrayList = new ArrayList<>(2);
 
         //reader.close()
         //Adds all the data from the txt files into their respective arraylists.
