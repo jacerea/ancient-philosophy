@@ -1,7 +1,6 @@
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.lang.Math;
 import java.util.ArrayList;
 import java.util.List;
@@ -20,21 +19,20 @@ public class Main{
         //Adds all the data from the txt files into their respective arraylists.
         //We need to figure out how to print the ASCIIs
         System.out.println(choice);
-        if(choice.equals("Aristotle")) {
+        if(choice.equals("aristotle")) {
             try{
-                Scanner reader = new Scanner(new File("philosophers\\aristotle\\arihistory.txt"));
+                Scanner reader = new Scanner(new File("philosophers/aristotle/arihistory.txt"));
                 while(reader.hasNextLine()){
-                    // historyArrayList.add(reader.nextLine());
-                    System.out.println(reader.nextLine());
+                    historyArrayList.add(reader.nextLine());
                 }
                 reader.close();
-                reader = new Scanner(new File("./philosophers/aristotle/ariquotes"));
-                while(scanner.hasNextLine()){
+                reader = new Scanner(new File("./philosophers/aristotle/ariquotes.txt"));
+                while(reader.hasNextLine()){
                     quotesArrayList.add(reader.nextLine());
                 }
                 reader.close();
-                reader = new Scanner(new File("./philosophers/aristotle/arireactions"));
-                while(scanner.hasNextLine()){
+                reader = new Scanner(new File("./philosophers/aristotle/arireactions.txt"));
+                while(reader.hasNextLine()){
                     reactionsArrayList.add(reader.nextLine());
                 }
                 reader.close();
@@ -43,18 +41,18 @@ public class Main{
             }
         }else if(choice.equals("seneca")){ 
             try{
-                Scanner reader = new Scanner(new File("./philosophers/seneca/senhistory"));
-                while(scanner.hasNextLine()){
+                Scanner reader = new Scanner(new File("./philosophers/seneca/senhistory.txt"));
+                while(reader.hasNextLine()){
                     historyArrayList.add(reader.nextLine());
                 }
                 reader.close();
-                reader = new Scanner(new File("./philosophers/seneca/senquotes"));
-                while(scanner.hasNextLine()){
+                reader = new Scanner(new File("./philosophers/seneca/senquotes.txt"));
+                while(reader.hasNextLine()){
                     quotesArrayList.add(reader.nextLine());
                 }
                 reader.close();
-                reader = new Scanner(new File("./philosophers/seneca/senreactions"));
-                while(scanner.hasNextLine()){
+                reader = new Scanner(new File("./philosophers/seneca/senreactions.txt"));
+                while(reader.hasNextLine()){
                     reactionsArrayList.add(reader.nextLine());
                 }
                 reader.close();
@@ -63,18 +61,18 @@ public class Main{
             }
         }else if(choice.equals("bloom")){
             try{
-                Scanner reader = new Scanner(new File("./philosophers/bloom/bloomhistory"));
-                while(scanner.hasNextLine()){
+                Scanner reader = new Scanner(new File("./philosophers/bloom/bloomhistory.txt"));
+                while(reader.hasNextLine()){
                     historyArrayList.add(reader.nextLine());
                 }
                 reader.close();
-                reader = new Scanner(new File("./philosophers/bloom/bloomquotes"));
-                while(scanner.hasNextLine()){
+                reader = new Scanner(new File("./philosophers/bloom/bloomquotes.txt"));
+                while(reader.hasNextLine()){
                     quotesArrayList.add(reader.nextLine());
                 }
                 reader.close();
-                reader = new Scanner(new File("./philosophers/bloom/bloomreactions"));
-                while(scanner.hasNextLine()){
+                reader = new Scanner(new File("./philosophers/bloom/bloomreactions.txt"));
+                while(reader.hasNextLine()){
                     reactionsArrayList.add(reader.nextLine());
                 }
                 reader.close();
@@ -95,9 +93,9 @@ public class Main{
         int quoteChoice = scanner.nextInt();
         //Debug/Check for errors
         //Printing all the quotes
+        int size = quotesArrayList.size();
+        int i = 0;
         while(quoteChoice == 1){
-            int size = quotesArrayList.size();
-            int i = 0;
             System.out.println(quotesArrayList.get(i));
             size--;
             i++;
@@ -110,24 +108,27 @@ public class Main{
         }
 
         //battle
-        System.out.println("Would you like to battle? 1 for yes 0 for no.");
-        int yn = scanner.nextInt();
-        if(yn == 1){
-            System.out.println("Who would you like to fight?");
-            String battleChoice = scanner.nextLine();
+        System.out.println("Who would you like to fight?");
+        String battleChoice = scanner.next();
+        while(battleChoice.toLowerCase().equals(choice)){
+            System.out.println("Choose a different person.");
+            battleChoice = scanner.next();
         }
-        while(yn == 1){
+        int x = 1;
+        while(x == 1){
             //random number 1-10 and the + 1 is just in case the math.random gives me 0.0.
             int choiceNumber = (int) (Math.random() * 10) + 1;
             int otherNumber = (int) (Math.random() * 10) + 1;
             if(choiceNumber > otherNumber){
-                System.out.println(reactionsArrayList.get(0));
-                yn = 0;
+                System.out.println(choice + " beat " + battleChoice + " in an philosophical battle!");
+                System.out.println(choice + " reflects on the victory. " + reactionsArrayList.get(0));
+                x = 0;
             } else if(choiceNumber == otherNumber){
                 System.out.println("Twas' a tie. Rerolling...");
             } else {
-                System.out.println(reactionsArrayList.get(1));
-                yn = 0;
+                System.out.println(battleChoice + " beat " + choice + " in an philosophical battle!");
+                System.out.println(choice + " reflects on the loss. " + reactionsArrayList.get(1));
+                x = 0;
             }
         }
         System.out.println("You have reached the end of the TechX hackathon code! Press 1 to continue.");
@@ -142,5 +143,6 @@ public class Main{
         System.out.println("I believe the hints were alluding towards the value of education, learning, and time.");
         System.out.println("If you put your mind to something and really want to execute it, the passion of learning will guide you through it.");
         System.out.println("You just need to get out there and do it.");
+        scanner.close();
     }    
 }
