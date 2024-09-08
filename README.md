@@ -1,7 +1,9 @@
 # ancient-philosophy
-TechX hackathon
+TechX Hackathon Fall 2024
 
+Learn about Aristotle, Seneca, and Benjamin Bloom and see who wins the battle of wits between them.
 
+Credits:
 For Image to ASCII
 https://www.asciiart.eu/image-to-ascii
 
