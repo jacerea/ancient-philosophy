@@ -21,9 +21,10 @@ public class Main{
         //We need to figure out how to print the ASCIIs
         if(choice == "aristole"){
             try{
-                Scanner reader = new Scanner(new File("./philosophers/aristotle/arihistory"));
+                Scanner reader = new Scanner(new File("./philosophers/aristotle/arihistory.txt"));
                 while(scanner.hasNextLine()){
-                    historyArrayList.add(reader.nextLine());
+                    //historyArrayList.add(reader.nextLine());
+                    System.out.println(reader.nextLine());
                 }
                 reader.close();
                 reader = new Scanner(new File("./philosophers/aristotle/ariquotes"));
