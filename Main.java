@@ -15,10 +15,8 @@ public class Main{
         List<String> quotesArrayList = new ArrayList<>(10);
         List<String> reactionsArrayList = new ArrayList<>(2);
 
-        //reader.close()
         //Adds all the data from the txt files into their respective arraylists.
         //We need to figure out how to print the ASCIIs
-        System.out.println(choice);
         if(choice.equals("aristotle")) {
             try{
                 Scanner reader = new Scanner(new File("philosophers/aristotle/arihistory.txt"));
@@ -34,6 +32,11 @@ public class Main{
                 reader = new Scanner(new File("./philosophers/aristotle/arireactions.txt"));
                 while(reader.hasNextLine()){
                     reactionsArrayList.add(reader.nextLine());
+                }
+                reader.close();
+                reader = new Scanner(new File("./philosophers/aristotle/ariascii.txt"));
+                while(reader.hasNextLine()) {
+                    System.out.println(reader.nextLine());
                 }
                 reader.close();
             }catch(FileNotFoundException exception){
@@ -56,6 +59,11 @@ public class Main{
                     reactionsArrayList.add(reader.nextLine());
                 }
                 reader.close();
+                reader = new Scanner(new File("./philosophers/seneca/senascii.txt"));
+                while(reader.hasNextLine()) {
+                    System.out.println(reader.nextLine());
+                }
+                reader.close();
             }catch(FileNotFoundException exception){
                 exception.printStackTrace();
             }
@@ -76,6 +84,11 @@ public class Main{
                     reactionsArrayList.add(reader.nextLine());
                 }
                 reader.close();
+                reader = new Scanner(new File("./philosophers/bloom/bloomascii.txt"));
+                while(reader.hasNextLine()) {
+                    System.out.println(reader.nextLine());
+                }
+                reader.close();
             }catch(FileNotFoundException exception){
                 exception.printStackTrace();
             }
@@ -89,7 +102,7 @@ public class Main{
             System.out.println(historyArrayList.get(i));
         }
         //Asks if they want to hear quotes from the philosopher
-        System.out.println("This was the history of " + choice + ". Enter 1 for a random " + choice + " quote. Enter 0 if you would like to exit and see the battle between philosophers.");
+        System.out.println("This was the history of " + choice + ". \nEnter 1 for a random " + choice + " quote. Enter 0 if you would like to exit and see the battle between philosophers.");
         int quoteChoice = scanner.nextInt();
         //Debug/Check for errors
         //Printing all the quotes
@@ -101,7 +114,7 @@ public class Main{
             i++;
             System.out.println("Would you like another quote? There are " + size + " quotes remaining. Enter 1 if so.");
             quoteChoice = scanner.nextInt();
-            if(size == 0){
+            if(size == 1){
                 System.out.println("There are no more quotes remaining, time to battle.");
                 quoteChoice = 0;
             }
